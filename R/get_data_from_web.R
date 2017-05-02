@@ -48,7 +48,7 @@ clean<-function(){sapply(list.files(tempdir()),unlink)}
 allsteps <- function(m,returnvalue=TRUE,createdatabase=FALSE,createrdafiles=FALSE,directory=tempdir(),varlist=varlist,
                      cps.dbname="cps.db",col_types=col_types){
   x=download.unzip.cpsmicrodata(m)
-    y=SAScii::read.SAScii3(
+    y=SAScii::read.SAScii(
       fn=x, 
       sas_ri=file.path(tempdir(),instructionfilenamef(last.format.change.date.f(m))),
       col_types=col_types,sel=varlist)# , zipped = FALSE)]
